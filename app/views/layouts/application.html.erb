@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= will_paginate @place, previous_label: h("<"), next_label: h(">") %>
 
   </head>
 
@@ -26,7 +27,9 @@
     </ul>
   </div>
 </nav>
-  
+
+ 
+    
 <%= yield %>
   
   </body>
