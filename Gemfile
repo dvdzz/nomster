@@ -65,6 +65,7 @@ gem 'popper_js', '~> 1.14', '>= 1.14.5'
 gem "bootstrap", ">= 4.3.1"
 gem 'will_paginate', '~> 3.1', '>= 3.1.7'
 gem "font-awesome-rails"
+gem 'geocoder'
 
 source 'https://rails-assets.org' do
 gem 'rails-assets-tether', '>= 1.3.3'
