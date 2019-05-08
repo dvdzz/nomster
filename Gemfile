@@ -67,6 +67,7 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.7'
 gem "font-awesome-rails"
 gem 'geocoder'
 gem 'simple_form'
+gem 'devise'
 
 source 'https://rails-assets.org' do
 gem 'rails-assets-tether', '>= 1.3.3'
