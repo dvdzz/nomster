@@ -66,9 +66,10 @@ gem "bootstrap", ">= 4.3.1"
 gem 'will_paginate', '~> 3.1', '>= 3.1.7'
 gem "font-awesome-rails"
 gem 'geocoder'
+gem 'simple_form'
 
 source 'https://rails-assets.org' do
 gem 'rails-assets-tether', '>= 1.3.3'
-gem 'simple_form'
+
 
 end
