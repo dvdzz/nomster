@@ -1,0 +1,191 @@
+[33mcommit 32e32d779f964995ad256bd1689dbf27210f4db6[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Sat May 11 16:48:36 2019 +0000
+
+    after completing lesson 26 and testing receive error no method error in placesshow
+
+[33mcommit 5f90b4740121da6f4671f6772ec7495ea34421dd[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Fri May 10 19:57:02 2019 +0000
+
+    removed the destroy button for non-creator
+
+[33mcommit c14adef808ba4f307c0f58602ebb7e4074809dfd[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Fri May 10 19:22:42 2019 +0000
+
+    locked down update def
+
+[33mcommit ac47ac28e3033add14d1cfa9aa7e11444b11c46a[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Fri May 10 18:07:58 2019 +0000
+
+    added a destroy button
+
+[33mcommit acc929475916fc395d443f1fc272291c668bb4f7[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Fri May 10 17:50:05 2019 +0000
+
+    My stupid a** was missing a : in one line of code in the conroller file, fixed and works
+
+[33mcommit 9e737313a06b3cab9f75dc5a7f8ad6c049a51a64[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Fri May 10 17:31:17 2019 +0000
+
+    undefined local variable or method id, unable to edit a record
+
+[33mcommit 219fc247622d6a04ad976cd43c1d4584f195c38e[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Fri May 10 01:34:33 2019 +0000
+
+    modified the show page and added an edit button
+
+[33mcommit 2decbb23468a117133af073d5151955aabda4117[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Fri May 10 01:11:08 2019 +0000
+
+    fixed my issue...rebooted rails server
+
+[33mcommit 44f9902041da85c8da3fb3c9b3f06cb4352b0bd2[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Fri May 10 00:43:43 2019 +0000
+
+    Issue when resolving 'name' to newly created 'show'page
+
+[33mcommit 849b38f113fcfd7b9c856c07f436437185fe09d6[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Thu May 9 19:10:39 2019 +0000
+
+    modified the login screen to look nicer
+
+[33mcommit 6a2ea7b24f93b41a93659677526d65075fab356e[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Thu May 9 17:38:06 2019 +0000
+
+    added user authentication and now lists creators email address below place
+
+[33mcommit 39e5107d60d11190df4dd50be5fdc959ea410bec[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Wed May 8 22:32:05 2019 +0000
+
+    modified login credential output
+
+[33mcommit 8c88cf9f961a07fbb279c9939e6577d72c13df6b[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Wed May 8 21:35:34 2019 +0000
+
+    installed devise gem
+
+[33mcommit 5754150a0b930432d52e010eaad38849800603ed[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Wed May 8 19:12:30 2019 +0000
+
+    moved simple_form out of do line
+
+[33mcommit f8dea9f45fcf76498c26448b969174e6d036a4f2[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Wed May 8 16:37:30 2019 +0000
+
+    added gem geocoder
+
+[33mcommit e4a4b5d16f1ccf06775507a5f754bbb2446472bb[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Wed May 8 16:18:57 2019 +0000
+
+    update Gemfile.lock for Heroku
+
+[33mcommit 3d3a83610dd43e804ddeec8d2c306d1ae713e99d[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Wed May 8 16:03:37 2019 +0000
+
+    installed new gem, pushed to heroku
+
+[33mcommit 24bbe803c522e8f7c541932809f0265df8c2d74d[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Tue May 7 20:38:20 2019 +0000
+
+    worked with Josh to correct controller issues.
+
+[33mcommit 2fd20757c1e9c7d61fbb5ce246b42014ecf957f3[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Tue May 7 16:29:55 2019 +0000
+
+    Josh helped me with pagination and my conrollers, fixed the issues
+
+[33mcommit 11bc52faa415c938864a003a70850a2dbdab1676[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Tue May 7 15:42:09 2019 +0000
+
+    broken pages
+
+[33mcommit b1a3bcc2348ed2dc610f606219fabe7133a32a16[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Mon May 6 22:31:47 2019 +0000
+
+    updated popper_js and bootstrap gems
+
+[33mcommit e9a4da99bb7721e714ff17bb46d4017f337c4a4e[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Mon May 6 20:52:42 2019 +0000
+
+    added pagination
+
+[33mcommit 53cf40d71807cf105151a92fade762e788b1365e[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Sun May 5 20:11:25 2019 +0000
+
+    changed the brand font & color
+
+[33mcommit 2dba2c7553d68db1401a9aa81a497956280fb3c2[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Sun May 5 17:39:00 2019 +0000
+
+    added texture background and honeycomb navbar, also changed to new font family
+
+[33mcommit a23429a45d3f3d634d04fc49c292cd4c67f2630a[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Sun May 5 17:10:27 2019 +0000
+
+    used some spacing and stole some code from a website we liked
+
+[33mcommit 9e4131909e347fc3125c3553084d129858823189[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Sun May 5 16:43:18 2019 +0000
+
+    Adjusted the NAV bar - color, removed a few links
+
+[33mcommit 29cfe28e760ee45a334db95865df385c3fc7616f[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Sat May 4 20:05:43 2019 +0000
+
+    created Nav bar
+
+[33mcommit 84a7b7bafed765450c6ef789963dab1f4a27fdf6[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Sat May 4 19:55:28 2019 +0000
+
+    Added a few gems; bootstrap, j-Query
+
+[33mcommit 655bdfcbac45fd91ea4d9f59561cc0f2f05ef0f6[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Fri May 3 23:16:37 2019 +0000
+
+    created db, defined db, manually added 2 records
+
+[33mcommit c84aff41125674b85c959fc5d751d538bd6e5e16[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Fri May 3 21:05:00 2019 +0000
+
+    updated db to include name, description, address
+
+[33mcommit 219109c9757da4b36af3bf8ccc6379998a9d80a4[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Fri May 3 19:51:52 2019 +0000
+
+    Nomster initial setup
+
+[33mcommit 28ea44d38344f9ec4fd6af891fb893096e0ec6d6[m
+Author: dvdzz <dvdzz76@icloud.com>
+Date:   Fri May 3 19:00:33 2019 +0000
+
+    Initial Commit
