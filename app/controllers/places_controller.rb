@@ -4,7 +4,6 @@ class PlacesController < ApplicationController
   def index
     #@places = Place.all
     @places = Place.order(:id).paginate(:page => params[:page], :per_page => 5) 
-    
   end
 
   def new
@@ -20,13 +19,6 @@ class PlacesController < ApplicationController
     end
   end
 
-  private
-
-  def place_params
-    params.require(:place).permit(:name, :description, :address)
-  end
-  end
-
   def show
     @place = Place.find(params[:id])
   end
@@ -35,13 +27,11 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     if @place.user != current_user
       return render plain: 'Not Allowed', status: :forbidden
-  end
-
+    end
   end
 
   def update
     @place = Place.find(params[:id])
-
 
     if @place.user != current_user
       return render plain: 'Not Allowed', status: :forbidden
@@ -59,8 +49,14 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     if @place.user != current_user
       return render plain: 'Not Allowed', status: :forbidden
-    end
-
     @place.destroy
     redirect_to root_path
+    end
   end
+
+  private
+  def place_params
+    params.require(:place).permit(:name, :description, :address)
+  end
+end
+
