@@ -1,4 +1,4 @@
 class Place < ApplicationRecord
   belongs_to :user
-  valdidates :name, presence: true
+  validates :name, presence: true
 end
