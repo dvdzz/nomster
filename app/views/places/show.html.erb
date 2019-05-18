@@ -34,7 +34,6 @@
       });
     }
   </script>
-
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiwFK7i7A4Hj4rFqfSa96hfiGlmLl9gSc&callback=initMap">
   </script>
@@ -110,7 +109,7 @@
         </button>
         <h4 class="modal-title" id="myModalLabel">Add a Photo</h4>
       </div>
-      <%= f.input :picture %>, url: place_photos_path(@place) do |f| %>
+      <%= f.input :photo %>, url: place_photo_path(@place) do |f| %>
         <div class="modal-body">
         </div>
         <div class="modal-footer">
@@ -132,7 +131,8 @@
 
 <div class="clear"></div>
 <div class="row">
-  <% @place.Photos.each do |Photos| %>
- 
+  <% @place.photos.each do |photo| %>
+    <%= image_tag photo.picture.url %>
+    <%= photo.caption %>
   <% end %>
 </div>

@@ -8,10 +8,13 @@ class PhotosController < ApplicationController
     redirect_to place_path(@place)
   end
 
+  def index
+      @photos = Photo.all
+  end
+
     private
 
   def photo_params
-    params.require(:photo).permit(:caption, :rating)
-    
+    params.require(:photo).permit(:caption, :image)
   end
 end
