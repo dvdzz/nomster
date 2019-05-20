@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :places do
     resources :comments, only: :create
     resources :photo, only: :create
-    resources :caption, only: :create
   end
 end
 

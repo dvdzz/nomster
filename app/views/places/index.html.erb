@@ -1,31 +1,35 @@
 <% @places.each do |place| %>
-  <div class="booyah-box" col-10 offset-1>
-    <h1><%= link_to place.name, place_path(place) %></h1><br />
-    <i><%= place.address %></i><br /><br />
-    <p><%= place.description %></p><br />
-    
-    <% if place.user.present? %>
-      <small><%= place.user.email %></small>
+  <div class="booyah-box col-10 offset-1">
+    <div class="row">
+      <div class="col-12 col-md-9">
+        <h1><%= link_to place.name, place_path(place) %></h1>
+        <i><%= place.address %></i><br /><br />
+        <p><%= place.description %></p>
+        <% if place.user.present? %>
+          <small>- <%= place.user.email %></small>
+        <% end %>
+        <br />
+      </div>
+      <div class="col-12 col-md-3">
+        <% if place.photos.present? %>
+          <div class="photos-index float-right">
+            <%= image_tag place.photos.first.picture, class: 'index-image-size' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <% if place.comments.present? %>
+      <div class="col-12">
+        <blockquote class="comment">
+          <% if place.comments.last.humanized_rating.present? %>
+            <b><%= place.comments.last.humanized_rating %></b> - <%= place.comments.last.message %>
+          <% end %>
+          <small>- <%= place.comments.last.user.email %></small>
+        </blockquote>
+      </div>
+    <% end %>
   </div>
-<% end %>
-
-<% if place.comments.present? %>
-  <div class="col-12">
-    <blockquote>
-      <% if place.comments.last.humanized_rating.present? %>
-        <b><%= place.comments.last.humanized_rating %></b> -
-      <% end %>
-      <%= place.comments.last.message %>
-      <small><%= place.comments.last.user.email %></small>
-    </blockquote>
-  </div>
-<% end %>
-
-
-<% @place.photos.each do |photo| %>
-  <%= image_tag photo.picture.url %>
-  <%= photo.caption %>
-<% end %>
 <% end %>
 
 <%= will_paginate @page, previous_label: h("<"), next_label: h(">") %>
