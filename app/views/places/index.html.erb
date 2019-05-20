@@ -11,9 +11,9 @@
         <br />
       </div>
       <div class="col-12 col-md-3">
-        <% if place.photos.present? %>
+        <% if place.photos.last.present? %>
           <div class="photos-index float-right">
-            <%= image_tag place.photos.first.picture, class: 'index-image-size' %>
+            <%= image_tag place.photos.first.photos, class: 'index-image-size' %>
           </div>
         <% end %>
       </div>
