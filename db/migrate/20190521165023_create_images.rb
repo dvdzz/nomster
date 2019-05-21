@@ -1,5 +1,5 @@
-class AddPictureToPhoto < ActiveRecord::Migration[5.2]
-  def change 
+class CreateImages < ActiveRecord::Migration[5.2]
+  def change
       create_table :photos do |t|
       t.text :caption
       t.integer :user_id

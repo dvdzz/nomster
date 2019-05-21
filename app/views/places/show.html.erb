@@ -97,7 +97,7 @@
 </div>
 
 
-<!-- Modal Pictures-->
+<!-- Modal Images-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -110,7 +110,7 @@
       <div class="clear"></div>
         <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
         <div class = "modal-body" >
-        <%= f.input :picture %>
+        <%= f.input :image %>
         <%= f.input :caption %>
         </div>
       <% end %>
@@ -127,7 +127,7 @@
 
 <div class="col-10 offset-1">
   <h1 class="float-left">Photos</h1>
-  <!-- Button trigger modal -->
+  <!-- Photo Button trigger modal -->
   <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
     Add a photo
   </button>
@@ -136,7 +136,7 @@
 <div class="clear"></div>
 <div class="row">
   <% @place.photos.each do |photo| %>
-    <%= image_tag photo.picture, class:"img-fluid" %>
+    <%= image_tag photo.image, class:"img-fluid" %>
     <%= photo.caption %>
   <% end %>
 </div>
