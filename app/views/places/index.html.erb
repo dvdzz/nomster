@@ -11,7 +11,7 @@
         <br />
       </div>
       <div class="col-12 col-md-3">
-        <% if place.image.last.present? %>
+        <% if place.images.last.present? %>
           <blockquote class="image">
             <% if place.images.last.humanized_rating.present? %>
             <b><%= place.images.last.humanized_rating %></b> - <%= place.images.last%>
@@ -33,4 +33,5 @@
 <% end %>
 
 <%= will_paginate @page, previous_label: h("<"), next_label: h(">") %>
+<% end %>
 
