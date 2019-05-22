@@ -1,4 +1,4 @@
-class PictureUploader < CarrierWave::Uploader::Base
+class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -9,12 +9,13 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
-  uploader = PictureUploader.new
+  uploader = ImageUploader.new
 
   uploader.store!(my_file)
 
   uploader.retrieve_from_store!('my_file.png')
   end
+
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)

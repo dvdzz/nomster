@@ -108,7 +108,7 @@
         <h4 class="modal-title" id="myModalLabel">Add a Photo</h4>
       </div>
       <div class="clear"></div>
-        <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+        <%= simple_form_for @image, url: place_images_path(@place) do |f| %>
         <div class = "modal-body" >
         <%= f.input :image %>
         <%= f.input :caption %>
@@ -135,8 +135,8 @@
 
 <div class="clear"></div>
 <div class="row">
-  <% @place.photos.each do |photo| %>
-    <%= image_tag photo.image, class:"img-fluid" %>
-    <%= photo.caption %>
+  <% @place.images.each do |photo| %>
+    <%= image_tag image.image, class:"img-fluid" %>
+    <%= image.caption %>
   <% end %>
 </div>

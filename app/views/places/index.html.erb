@@ -11,13 +11,13 @@
         <br />
       </div>
       <div class="col-12 col-md-3">
-        <% if place.photos.last.present? %>
-          <div class="photos-index float-right">
-            <%= image_tag place.photos.first.photos, class: 'index-image-size' %>
-          </div>
-        <% end %>
+        <% if place.image.last.present? %>
+          <blockquote class="image">
+            <% if place.images.last.humanized_rating.present? %>
+            <b><%= place.images.last.humanized_rating %></b> - <%= place.images.last%>
+          </blockquote>
       </div>
-    </div>
+    <% end %>
 
     <% if place.comments.present? %>
       <div class="col-12">
