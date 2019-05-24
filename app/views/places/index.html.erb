@@ -1,7 +1,7 @@
 <% @places.each do |place| %>
-  <div class="booyah-box col-10 offset-1">
-    <div class="row">
-      <div class="col-12 col-md-9">
+  <div class="booyah-box col-10 offset-1"></div>
+    <div class="row"></div>
+      <div class="col-12 col-md-9"></div>
         <h1><%= link_to place.name, place_path(place) %></h1>
         <i><%= place.address %></i><br /><br />
         <p><%= place.description %></p>
@@ -10,25 +10,33 @@
         <% end %>
         <br />
       </div>
-      <div class="col-12 col-md-3">
+      <div class="col-12 col-md-3"><
         <% if place.images.last.present? %>
           <blockquote class="image">
             <% if place.images.last.humanized_rating.present? %>
-            <b><%= place.images.last.humanized_rating %></b> - <%= place.images.last%>
+            <b><%= place.images.last.humanized_rating %></b> - <%= place.images.last%><b>
           </blockquote>
       </div>
-    <% end %>
+    </div>
+  <% end %>
 
-    <% if place.comments.present? %>
-      <div class="col-12">
-        <blockquote class="comment">
-          <% if place.comments.last.humanized_rating.present? %>
-            <b><%= place.comments.last.humanized_rating %></b> - <%= place.comments.last.message %>
+  <div class="col-12 col-md-3">
+    <% if place.caption.last.present? %>
+      <blockquote class="caption">
+        <% if place.captions.last.humanized_rating.present? %>
+          <b><%= place.captions.last.humanized_rating %></b> - <%= place.captions.last%>
+          </blockquote>
+    <% end %>
+  </div>
+
+  <div class="col-12 col-md-3">
+      <blockquote class="comment">
+        <% if place.comments.last.humanized_rating.present? %>
+          <b><%= place.comments.last.humanized_rating %></b> - <%= place.comments.last.message %>
           <% end %>
           <small>- <%= place.comments.last.user.email %></small>
         </blockquote>
-      </div>
-    <% end %>
+      <% end %>
   </div>
 <% end %>
 

@@ -12,53 +12,47 @@ class PlacesController < ApplicationController
 
   def create
     @place = current_user.places.create(place_params)
-    if @place.valid?
-      redirect_to root_path
-    else
-      render :new, status: :unprocessable_entity
-    end
+      if @place.valid?
+        redirect_to root_path
+      else
+        render :new, status: :unprocessable_entity
+      end
   end
 
   def show
     @place = Place.find(params[:id])
     @comment = Comment.new
-    @image = Picture.new
+    @image = Image.new
   end
 
   def edit
     @place = Place.find(params[:id])
-    if @place.user != current_user
+      if @place.user != current_user
       return render plain: 'Not Allowed', status: :forbidden
     end
+  end
 
   def update
     @place = Place.find(params[:id])
-
-    if @place.user != current_user
-      return render plain: 'Not Allowed', status: :forbidden
-    end
-
-    @place.update_attributes(place_params)
-    if @place.valid?
-      redirect_to root_path
-    else
-      render :edit, status: :unprocessable_entity
-    end
+      if @place.user != current_user
+        return render plain: 'Not Allowed', status: :forbidden
+      end   
+      if @place.valid?  @place.update_attributes(place_params)  
+      else render :edit, status: :unprocessable_entity
+      end
+  end
 
   def destroy
-  @place = Place.find(params[:id])
-  if @place.user != current_user
-    return render plain: 'Not Allowed', status: :forbidden
+    @place = Place.find(params[:id])
+    
+      if @place.user != current_user
+        return render plain: 'Not Allowed', status: :forbidden
+      else
+      @place.destroy = redirect_to root_path
+    end
   end
-
-  @place.destroy
-  redirect_to root_path
-  end
-
-  private
 
   def place_params
     params.require(:place).permit(:name, :description, :address, :comment, :image, :caption)
   end
 end
-
