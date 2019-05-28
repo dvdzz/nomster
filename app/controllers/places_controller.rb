@@ -48,7 +48,8 @@ class PlacesController < ApplicationController
       if @place.user != current_user
         return render plain: 'Not Allowed', status: :forbidden
       else
-      @place.destroy = redirect_to root_path
+      @place.destroy 
+      redirect_to root_path
     end
   end
 

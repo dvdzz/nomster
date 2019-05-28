@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'bundler','>=1.8.4'
 git_source(:github) { |repo| "https://github.com/dvdzz/nomster.git"}
 
 ruby '2.5.3'
@@ -70,6 +71,7 @@ gem 'devise'
 gem "geocoder"
 gem "figaro"
 gem 'carrierwave', '~> 1.0'
+gem "fog-aws"
 
 source 'https://rails-assets.org' do
 gem 'rails-assets-tether', '>= 1.3.3'
