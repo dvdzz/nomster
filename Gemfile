@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-gem 'bundler','>=1.8.4'
 git_source(:github) { |repo| "https://github.com/dvdzz/nomster.git"}
 
 ruby '2.5.3'
@@ -61,6 +60,7 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'bundler','>=1.8.4'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'popper_js', '~> 1.14', '>= 1.14.5'
 gem "bootstrap", ">= 4.3.1"
