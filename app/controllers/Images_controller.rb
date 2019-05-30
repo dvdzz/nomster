@@ -5,7 +5,6 @@ class ImagesController < ApplicationController
   def create
     @place = Place.find(params[:place_id])
     @place.image.create(image_params.merge(user: current_user))
-    @place.caption.create(image_params.merge(user: current_user))
     redirect_to place_path(@place)
   end
 
