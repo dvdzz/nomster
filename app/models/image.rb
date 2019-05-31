@@ -1,7 +1,6 @@
 class Image < ApplicationRecord
-  mount_uploader :PictureUploader
+  mount_uploader :picture, PictureUploader
   belongs_to :user
   belongs_to :place
-  belongs_to :caption
 end
 
