@@ -6,40 +6,30 @@
         <i><%= place.address %></i><br /><br />
         <p><%= place.description %></p>
         <% if place.user.present? %>
-          <small>- <%= place.user.email %></small>
+        <small>- <%= place.user.email %></small>
         <% end %>
-        <br />
+      <br />
+      
+      <div class="col-12 col-md-3">
+        <% if place.images.present? %>
+        <% end %>
+      <div class="col-12">
+        <blockquote>
+          <img class="img-thumbnail" src="<%= place.image.last.image %>">
+        </blockquote>
       </div>
-      <div class="col-12 col-md-3"><
-        <% if place.images.last.present? %>
-          <blockquote class="image">
-            <% if place.images.last.humanized_rating.present? %>
-            <b><%= place.images.last.humanized_rating %></b> - <%= place.images.last%><b>
-          </blockquote>
-      </div>
-    </div>
-  <% end %>
-
-  <div class="col-12 col-md-3">
-    <% if place.caption.last.present? %>
-      <blockquote class="caption">
-        <% if place.captions.last.humanized_rating.present? %>
-          <b><%= place.captions.last.humanized_rating %></b> - <%= place.captions.last%>
-          </blockquote>
-    <% end %>
-  </div>
-
-  <div class="col-12 col-md-3">
+     
+    <div class="col-12 col-md-3">
       <blockquote class="comment">
         <% if place.comments.last.humanized_rating.present? %>
           <b><%= place.comments.last.humanized_rating %></b> - <%= place.comments.last.message %>
-          <% end %>
-          <small>- <%= place.comments.last.user.email %></small>
-        </blockquote>
-      <% end %>
+        <% end %>
+        <small>- <%= place.comments.last.user.email %></small>
+      </blockquote>
+    </div>
   </div>
 <% end %>
 
+
 <%= will_paginate @page, previous_label: h("<"), next_label: h(">") %>
-<% end %>
 
