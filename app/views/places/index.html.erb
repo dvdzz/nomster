@@ -12,17 +12,18 @@
       
       <div class="col-12 col-md-3">
         <% if place.images.present? %>
+        <b><%= place.images.last %></b>
         <% end %>
       <div class="col-12">
         <blockquote>
-          <img class="img-thumbnail" src="<%= place.image.last.image %>">
+          <img class="img-thumbnail" src="<%= place.images.last.picture %>">
         </blockquote>
       </div>
      
     <div class="col-12 col-md-3">
       <blockquote class="comment">
         <% if place.comments.last.humanized_rating.present? %>
-          <b><%= place.comments.last.humanized_rating %></b> - <%= place.comments.last.message %>
+          <b><%= place.comments.last.humanized_rating %></b> - 
         <% end %>
         <small>- <%= place.comments.last.user.email %></small>
       </blockquote>
