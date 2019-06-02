@@ -19,7 +19,7 @@
           <img class="img-thumbnail" src="<%= place.images.last.picture %>">
         </blockquote>
       </div>
-     
+    <% if place.comments.present? %> 
     <div class="col-12 col-md-3">
       <blockquote class="comment">
         <% if place.comments.last.humanized_rating.present? %>
@@ -28,6 +28,7 @@
         <small>- <%= place.comments.last.user.email %></small>
       </blockquote>
     </div>
+    <% end %>
   </div>
 <% end %>
 
