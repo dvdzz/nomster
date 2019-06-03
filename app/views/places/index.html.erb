@@ -9,15 +9,15 @@
         <small>- <%= place.user.email %></small>
         <% end %>
       <br />
-      
+      <blockquote>
       <div class="col-12 col-md-3">
-        <% if place.images.present? %>
-        <b><%= place.images.last %></b>
-        <% end %>
-      <div class="col-12">
-        <blockquote>
-          <img class="img-thumbnail" src="<%= place.images.last.picture %>">
-        </blockquote>
+          <% if place.images.present? %>
+        <b> <%= place.images.last %>  </b>
+            <% end %>
+          <% if place.images.present? && place.images.last.picture.present?  %>
+          <%= image_tag place.images.order("id ASC").last.picture.url, :class => "img-thumbnail" %>
+          <% end %>   
+      </blockquote>
       </div>
     <% if place.comments.present? %> 
     <div class="col-12 col-md-3">
