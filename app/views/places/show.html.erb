@@ -99,7 +99,7 @@
           <%= simple_form_for @image, url: place_images_path(@place) do |f| %>
             <div class="modal-body">
               <%= f.input :caption %>
-              <%= f.file_field :image %>
+              <%= f.input :picture %>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
@@ -116,14 +116,16 @@
     <div class="clear"></div>
 
     <div class="row">
+<% if @place.images.any? %>
+    <div class="row">
       <% @place.images.each do |image| %>
         <div class="col-12 col-sm-6">
           <blockquote>
-            <%= image_tag image.picture, class:"img-fluid" %>
-            <%= photo.caption %>
+            <%= image_tag image.picture.url, class:"img-fluid" %>
+            <%= image.caption %>
             <br />
           </blockquote>
         </div>
       <% end %>
     </div>
-</div>
+<% end %>
