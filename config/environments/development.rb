@@ -2,7 +2,7 @@ Rails.application.configure do
   #config.action_mailer.delivery_method = :test
 
   #config.action_mailer.smtp_settings = {
-  # address: "smtp.yahoo.com",
+  # address: "smtp.gmail.com",
   # port: 587,
   # domain: "example.com",
   # authentication: "plain",
