@@ -2,10 +2,11 @@
         CarrierWave.configure do |config|
         config.root = Rails.root.join('tmp')
         config.cache_dir = 'carrierwave'
+        #config.fog_provider = 'FOG/AWS'
 
         config.fog_credentials = {
           # Configuration for Amazon S3
-          :provider               => 'AWS',                         # change var's name
+          :provider               => 'FOG/AWS',                         # change var's name
           :aws_access_key_id      => ENV['AWS_ACCESS_KEY'],         # change var's name
           :aws_secret_access_key  => ENV['AWS_SECRET_KEY']
         }

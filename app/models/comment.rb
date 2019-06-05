@@ -15,9 +15,9 @@ class Comment < ApplicationRecord
     RATINGS.invert[self.rating]
   end
 
-  #def send_comment_email
-    #NotificationMailer.comment_added(self).deliver_now
-  #end
+  def send_comment_email
+    NotificationMailer.comment_added(self).deliver_now
+  end
 
 
 end
