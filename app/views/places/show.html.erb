@@ -110,22 +110,3 @@
       </div>
     </div>
 
-    <div class="col-10 offset-1">
-      <h1 class="float-left">Photos</h1>
-    </div>
-    <div class="clear"></div>
-
-    <div class="row">
-<% if @place.images.any? %>
-    <div class="row">
-      <% @place.images.each do |image| %>
-        <div class="col-12 col-sm-6">
-          <blockquote>
-            <%= image_tag image.picture.url, class:"img-fluid" %>
-            <%= image.caption %>
-            <br />
-          </blockquote>
-        </div>
-      <% end %>
-    </div>
-<% end %>
