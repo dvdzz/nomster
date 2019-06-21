@@ -42,24 +42,33 @@
   </a>
 </div>
 
-
-
 <% @places.each do |place| %>
-  <div class="booyah-box col-10 offset-1"></div>
-    <div class="row"></div>
-      <div class="col-12 col-md-9"></div>
-        <h1><%= link_to place.name, place_path(place) %></h1>
-          <i><%= place.address %></i><br /><br />
-          <p><%= place.description %></p>
-          <% if place.user.present? %>
-        <small>- <%= place.user.email %></small>
-        <% end %>
-      <br />
-     <div class="col-10 offset-1">
-      <h1 class="float-left">Photos</h1>
-    </div>
-    <div class="clear"></div>
+  <div class="booyah-box col-10 offset-1">
+    <h1><%= link_to place.name, places_path(place) %></h1><
+    <i><%= place.address %></i><br />;br />
+    <p><%= place.description %></p><br />
 
+    <% if place.user.present? %>
+      <small><%= place.user.email %></small>
+    <% end %>
+
+    <% if place.comments.present? %>
+      <div class="col-12">
+        <blockquote>
+          <% if place.comments.last.humanized_rating.present? %>
+            <b><%= place.comments.last.humanized_rating %></b> -
+          <% end %>
+          <%= place.comments.last.message %>
+          <small><%= place.comments.last.user.email %></small>
+        </blockquote>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-10 offset-1">
+    <h1 class="float-left">Photos</h1>
+  </div>
+    <div class="clear"></div>
     <div class="row">
       <% if place.images.present? %>
     <div class="row">
@@ -73,19 +82,10 @@
         </div>
       <% end %>
     </div>
-  <% end %> 
-    <% if place.comments.present? %> 
-    <div class="col-12 col-md-3">
-      <blockquote class="comment">
-        <% if place.comments.last.humanized_rating.present? %>
-          <b><%= place.comments.last.humanized_rating %></b> - 
-        <% end %>
-        <small>- <%= place.comments.last.user.email %></small>
-      </blockquote>
-    </div>
-    <% end %>
-  </div>
+  <% end %>
 <% end %>
+
+
 
 
 <%= will_paginate @page, previous_label: h("<"), next_label: h(">") %>
