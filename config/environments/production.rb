@@ -1,5 +1,5 @@
 Rails.application.configure do
-
+  #config for SendGrid
   ActionMailer::Base.smtp_settings = {
     address: 'smtp.sendgrid.net',
     port: '587',
@@ -9,6 +9,7 @@ Rails.application.configure do
     domain: 'heroku.com',
     enable_starttls_auto: true
   }
+  #Config for devise
   config.action_mailer.default_url_options = { host: 'nomster-darrenvandyke.herokuapp.com'}
   # Settings specified here will take precedence over those in config/application.rb.
 
