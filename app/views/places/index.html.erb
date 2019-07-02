@@ -51,8 +51,8 @@
       <% end %>
     </div>
 
-      <h1><%= link_to place.name, places_path(place) %></h1><
-      <i><%= place.address %></i><br />;br />
+      <h1><%= link_to place.name, place_path(place) %></h1>
+      <i><%= place.address %></i><br />
       <p><%= place.description %></p><br />
 
       <% if place.user.present? %>
