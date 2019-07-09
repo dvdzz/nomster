@@ -1,16 +1,21 @@
 class ImagesController < ApplicationController
   before_action :authenticate_user!
-
+ 
 
   def create
     @place = Place.find(params[:place_id])
-    @place.images.create(image_params)
+    @place.images.create
     redirect_to place_path(@place)
   end
 
-    private
+  def index
+     @images = Image.all
+  end
 
-  def image_params
-    params.require(:image).permit(:picture,:caption)
+
+  private
+
+  def photo_params
+    params.require(:image).permit(:caption, :image)
   end
 end

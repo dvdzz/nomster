@@ -44,52 +44,28 @@
 
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
-
-    <div class="pull-right" style= "height:200px; width: 200px">
-      <% if place.images.present? && place.images.last.picture.present?  %>
-        <%= image_tag place.images.order("id ASC").last.picture.url, :class => "img-thumbnail" %>
-      <% end %>
-    </div>
-
-      <h1><%= link_to place.name, place_path(place) %></h1>
-      <i><%= place.address %></i><br />
-      <p><%= place.description %></p><br />
-
-      <% if place.user.present? %>
-        <small><%= place.user.email %></small>
-      <% end %>
-
+    <h1 id="placenameindex"><%= link_to place.name, place_path(place) %></h1>
+    <i id="placeaddressindex"><%= place.address %></i><br /><br />
+    <p id="placedescindex"><%= place.description %></p><br />
+  
     <% if place.comments.present? %>
       <div class="col-12">
         <blockquote>
           <% if place.comments.last.humanized_rating.present? %>
-            <b><%= place.comments.last.humanized_rating %></b> -
+            <b><%= place.comments.last.humanized_rating %></b>
           <% end %>
           <%= place.comments.last.message %>
-          <small><%= place.comments.last.user.email %></small>
         </blockquote>
       </div>
     <% end %>
+    <% if place.images.present? %>
+      <div class="col-12">
+        <blockquote>
+          <img class="img-thumbnail" src="<%= place.images.last.image %>">
+        </blockquote>
+      </div>
+    <% end %>  
   </div>
-
-  <div class="col-10 offset-1">
-    <h1 class="float-left">Photos</h1>
-  </div>
-    <div class="clear"></div>
-    <div class="row">
-      <% if place.images.present? %>
-    <div class="row">
-      <% place.images.each do |image| %>
-        <div class="col-12 col-sm-6">
-          <blockquote>
-            <%= image.picture %>
-            <%= image.caption %>
-            <br />
-          </blockquote>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
 <% end %>
 
 <%= will_paginate @page, previous_label: h("<"), next_label: h(">") %>
