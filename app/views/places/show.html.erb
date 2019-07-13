@@ -120,8 +120,10 @@
       <% @place.images.each do |image| %>
         <div class="col-12 col-sm-6">
           <blockquote>
+            <% if image.picture.present? %>
             <%= image_tag image.picture.url %>
             <%= image.caption %>
+            <% end %>
           </blockquote>
         </div>
       <% end %>
