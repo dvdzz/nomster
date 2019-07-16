@@ -61,7 +61,7 @@
     <% if place.images.present? %>
       <div class="col-12">
         <blockquote>
-        <%= image_tag place.images.first.picture.to_s %>
+        <img class="img-thumbnail" src="<%= place.images.last.picture %>">
         </blockquote>
       </div>
     <% end %>  

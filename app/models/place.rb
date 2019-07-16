@@ -1,7 +1,7 @@
 class Place < ApplicationRecord
   belongs_to :user
-  has_many :comments
-  has_many :images
+  has_many   :comments
+  has_many   :images
   
 
   validates :name, length: { minimum: 3, too_short: " - %{count} characters is the minimum allowed" }
