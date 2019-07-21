@@ -3,6 +3,8 @@
   <i><%= @place.address %></i>
   
   <p><%= @place.description %></p>
+    
+    
     <% if @place.latitude.present? && @place.longitude.present? %>
       <script>
         function initMap() {
@@ -44,6 +46,21 @@
     </div>
 
     <div class="clear"></div>
+
+
+  <div class="col-12 col-sm-8">
+    <% if @place.photos.present? %>
+      <% @place.photos.each do |photo| %>
+         <div class="polaroid">
+         <%= image_tag photo.picture.url %>
+         <div class="container">
+        <%= photo.caption %> 
+        </div></div>
+      <% end %>
+    <% end %>
+  </div>
+
+<br />
    
 
     <!-- Modal for comments-->
@@ -88,7 +105,7 @@
       <% end %>
     </div>
 
-    <!--Modal for images -->    
+    <!--Modal for Photos -->    
     <div class="modal fade" id="photosModal" tabindex="-1" role="dialog" aria-labelledby="imagesModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -97,10 +114,10 @@
             </button>
             <h4 class="modal-title" id="photosModalLabel">Add a photo</h4>
           </div>
-          <%= simple_form_for @image, url: place_images_path(@place) do |f| %>
+          <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
             <div class="modal-body">
               <%= f.input :caption %>
-              <%= f.file_field :picture %>
+              <%= f.input :picture %>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
@@ -111,20 +128,3 @@
       </div>
     </div>
 
-    <div class="col-10 offset-1">
-      <h1 class="float-left">Photos</h1>
-    </div>
-    <div class="clear"></div>
-
-    <div class="row">
-      <% @place.images.each do |image| %>
-        <div class="col-12 col-sm-6">
-          <blockquote>
-            <% if image.picture.present? %>
-            <%= image_url image.picture.url %>
-            <%= image.caption %>
-            <% end %>
-          </blockquote>
-        </div>
-      <% end %>
-    </div>
