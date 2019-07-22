@@ -1,15 +1,17 @@
 Rails.application.configure do
-  config.web_console.whitelisted_ips = '10.0.2.2'
-  config for SendGrid
-  ActionMailer::Base.smtp_settings = {
-    address: 'smtp.sendgrid.net',
-    port: '587',
-    authentication: :plain,
-    user_name: ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWORD'],
-    domain: 'heroku.com',
-    enable_starttls_auto: true
-  }
+
+config.web_console.whitelisted_ips = '10.0.2.2'
+ 
+  
+  # ActionMailer::Base.smtp_settings = {
+  # address: 'smtp.sendgrid.net',
+  # port: '587',
+  # authentication: :plain,
+  # user_name: ENV['SENDGRID_USERNAME'],
+  # password: ENV['SENDGRID_PASSWORD'],
+  # domain: 'heroku.com',
+  # enable_starttls_auto: true
+  # }
   #Config for devise
   config.action_mailer.default_url_options = { host: 'nomster-darrenvandyke.herokuapp.com'}
   # Settings specified here will take precedence over those in config/application.rb.
@@ -46,6 +48,9 @@ Rails.application.configure do
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
+
+   # Store uploaded files on the local file system (see config/storage.yml for options)
+   config.active_storage.service = :local
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
