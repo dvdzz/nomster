@@ -9,3 +9,4 @@ CarrierWave.configure do |config|
     config.fog_directory  = ENV["AWS_BUCKET"]            # required
     config.fog_public = false 
   end
+end
