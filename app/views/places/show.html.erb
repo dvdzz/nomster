@@ -52,7 +52,7 @@
     <% if @place.photos.present? %>
       <% @place.photos.each do |photo| %>
          <div class="polaroid">
-         <%= image_tag photo.picture.url %>
+         <%= image_tag photo.picture.to_s %>
          <div class="container">
         <%= photo.caption %> 
         </div></div>
