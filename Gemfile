@@ -71,7 +71,7 @@ end
   gem 'geocoder'
   gem 'figaro'
   gem 'mini_magick'
-  gem 'carrierwave', '~> 1.0'
+  gem 'carrierwave', '~> 1.3'
   gem 'fog-aws'
   gem 'carrierwave-aws'
 
